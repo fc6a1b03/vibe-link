@@ -1,7 +1,8 @@
 # 构建
-FROM oven/bun:1-alpine as builder
+FROM oven/bun:1-alpine AS builder
 WORKDIR /app
-RUN bun i && bun run build
+RUN bun i
+RUN bun run build
 
 # 最终运行时
 FROM oven/bun:1-alpine
