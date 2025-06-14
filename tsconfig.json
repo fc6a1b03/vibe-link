@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@backend/*": [
+        "src/backend/src/*"
+      ],
+      "@frontend/*": [
+        "src/frontend/src/*"
+      ],
+      "@common/*": [
+        "src/common/*"
+      ]
+    },
+    "allowSyntheticDefaultImports": true
+  }
+}
