@@ -11,7 +11,7 @@ export default async function view(fastify: FastifyInstance) {
     fastify.register(fastifyStatic, {
         prefix: "/",
         wildcard: false,
-        decorateReply: false,
+        decorateReply: true,
         root: path.join(__dirname, "..", "..", "..", "public")
     });
     fastify.get(`/*`, async (_, reply) =>
