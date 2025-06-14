@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build"
+    "build": "vite build --outDir dist"
   },
   "dependencies": {
     "vue": "^3.5.16",
