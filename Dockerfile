@@ -1,6 +1,7 @@
 # 构建
 FROM oven/bun:1-alpine AS builder
 WORKDIR /app
+COPY . .
 RUN bun i
 RUN bun run build
 
