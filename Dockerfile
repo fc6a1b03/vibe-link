@@ -6,7 +6,7 @@ RUN bun i && bun run build
 RUN ls -lah
 RUN ls -lah src
 RUN ls -lah src/backend
-RUN ls -lah frontend
+RUN ls -lah src/frontend
 
 ################################
 
