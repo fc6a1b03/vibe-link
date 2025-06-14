@@ -6,6 +6,7 @@
 *.iml
 out
 gen
+*.lock
 ### Vue template
 # gitignore template for Vue.js projects
 #
@@ -20,7 +21,7 @@ test/
 ### Vuejs template
 # Recommended template: Node.gitignore
 
-*.lock
+src/public/
 node_modules/
 dist/
 npm-debug.log

@@ -6,10 +6,8 @@ RUN bun i && bun run build
 # 最终运行时
 FROM oven/bun:1-alpine
 WORKDIR /app
-ENV VITE_PORT=3000
-ENV BACKEND_PORT=3001
-COPY --from=builder /app/frontend/dist /app/frontend
 COPY --from=builder /app/backend/dist /app/backend
+COPY --from=builder /app/frontend/dist /app/public
 COPY --from=builder /app/node_modules /app/node_modules
 
 EXPOSE 3001
