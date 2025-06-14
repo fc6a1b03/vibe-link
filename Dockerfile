@@ -3,7 +3,7 @@ FROM oven/bun:1-alpine AS builder
 WORKDIR app
 COPY . .
 RUN bun i && bun run build
-RUN apk add tree && tree -hf
+RUN apk add tree && find . -path "./node_modules" -prune -o -print | tree -f -d
 
 ################################
 
