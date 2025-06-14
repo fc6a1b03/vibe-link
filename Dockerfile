@@ -3,10 +3,10 @@ FROM oven/bun:1-alpine AS builder
 WORKDIR app
 COPY . .
 RUN bun i && bun run build
-RUN ls -lah /app
-RUN ls -lah /app/src
-RUN ls -lah /app/src/backend
-RUN ls -lah /app/src/frontend
+RUN ls -lah
+RUN ls -lah src
+RUN ls -lah src/backend
+RUN ls -lah frontend
 
 ################################
 
