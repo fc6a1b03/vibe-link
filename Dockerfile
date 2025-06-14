@@ -2,8 +2,7 @@
 FROM oven/bun:1-alpine AS builder
 WORKDIR /app
 COPY . .
-RUN bun i
-RUN bun run build
+RUN bun i && bun run build && ls -lhr
 
 # 最终运行时
 FROM oven/bun:1-alpine
