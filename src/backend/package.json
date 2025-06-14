@@ -1,0 +1,11 @@
+{
+  "name": "backend",
+  "type": "module",
+  "scripts": {
+    "dev": "bun src/app/app.ts",
+    "build": "bun build src/app/app.ts --outfile=dist/app.js"
+  },
+  "dependencies": {
+    "fastify": "^5.4.0"
+  }
+}

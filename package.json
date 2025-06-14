@@ -1,0 +1,22 @@
+{
+  "name": "vibe-link",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "src/frontend",
+      "src/backend",
+      "src/common"
+    ]
+  },
+  "scripts": {
+    "dev:backend": "cd src/backend && bun run dev",
+    "dev:frontend": "cd src/frontend && bun run dev",
+    "dev": "concurrently 'bun run dev:backend' 'bun run dev:frontend'",
+    "build:backend": "cd src/backend && bun run build",
+    "build:frontend": "cd src/frontend && bun run build",
+    "build": "concurrently 'bun run build:backend' 'bun run build:frontend'"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
