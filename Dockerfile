@@ -3,7 +3,6 @@ FROM oven/bun:1-alpine AS builder
 WORKDIR app
 COPY . .
 RUN bun i && bun run build
-RUN apk add tree && find . -path "./node_modules" -prune -o -print | tree -f -d
 
 ################################
 
@@ -12,7 +11,7 @@ FROM oven/bun:1-alpine
 WORKDIR app
 COPY --from=builder /app/src/backend/dist /app/backend
 COPY --from=builder /app/src/frontend/dist /app/public
-COPY --from=builder /app/src/node_modules /app/node_modules
+COPY --from=builder /app/node_modules /app/node_modules
 
 EXPOSE 3001
 CMD ["bun", "run", "backend/app.js"]
