@@ -3,7 +3,7 @@ import vue from "@vitejs/plugin-vue"
 import {defineConfig, loadEnv} from "vite"
 
 export default (mode: any) => {
-    // 读取环境配置
+    // 初始化环境配置
     const env = loadEnv(mode, path.resolve(__dirname, '..', '..'));
     // 注册Vite
     return defineConfig({
