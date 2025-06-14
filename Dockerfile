@@ -2,6 +2,7 @@
 FROM oven/bun:1-alpine AS builder
 WORKDIR app
 COPY . .
+RUN ls -lh
 RUN bun i && bun run build
 
 ################################
