@@ -1,12 +1,22 @@
 import dotenv from "dotenv"
 import Fastify from "fastify"
+import {Redis} from "ioredis"
 import * as path from "node:path"
 import api from "@backend/controller/api"
 import view from "@backend/controller/view"
+import {MySQLPromisePool} from "@fastify/mysql"
 import redisRegister from "@backend/plugin/redis"
-import mysqlRegister from "@backend/plugin/mysql";
+import mysqlRegister from "@backend/plugin/mysql"
+
 // 初始化环境配置
 dotenv.config({path: path.resolve(__dirname, "..", "..", ".env")});
+// 注册插件模组
+declare module 'fastify' {
+    interface FastifyInstance {
+        redis: Redis
+        mysql: MySQLPromisePool
+    }
+}
 
 /**
  * 服务入口
