@@ -17,7 +17,7 @@ export default async function redisRegister(fastify: FastifyInstance) {
         enableOfflineQueue: true,
         host: process.env.REDIS_HOST,
         port: process.env.REDIS_PORT,
-        password: process.env.REDIS_PASS,
+        password: Buffer.from(process.env.REDIS_PASS),
     });
     await redisReady(fastify);
 }
@@ -30,8 +30,8 @@ export async function redisReady(fastify: FastifyInstance) {
     if (!fastify.redis) throw new Error("Redis装饰器未注入");
     try {
         await fastify.redis.ping();
-        fastify.log.info("🌿 Redis连接正常");
+        fastify.log.info("✅  Redis连接正常");
     } catch (err) {
-        fastify.log.error(`🔴 Redis心跳检测失败: ${err.message}`);
+        fastify.log.error(`❌  Redis心跳检测失败: ${err.message}`);
     }
 }

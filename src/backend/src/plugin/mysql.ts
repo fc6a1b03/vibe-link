@@ -9,7 +9,11 @@ export default async function mysqlRegister(fastify: FastifyInstance) {
     await fastify.register(require('@fastify/mysql'), {
         type: "pool",
         promise: true,
-        connectionString: process.env.MYSQL_CONFIG,
+        host: process.env.MYSQL_HOST,
+        port: process.env.MYSQL_PORT,
+        user: process.env.MYSQL_USER,
+        database: process.env.MYSQL_DATABASE,
+        password: Buffer.from(process.env.MYSQL_PASS),
         pool: {
             min: 2,
             max: 10,
@@ -33,9 +37,9 @@ export async function mysqlReady(fastify: FastifyInstance) {
     if (!fastify.mysql) throw new Error("Mysql装饰器未注入");
     try {
         await fastify.mysql.query('SELECT 1');
-        fastify.log.info("🌿 Mysql连接正常");
+        fastify.log.info("✅  Mysql连接正常");
     } catch (err) {
-        fastify.log.error(`🔴 Mysql心跳检测失败: ${err.message}`);
+        fastify.log.error(`❌  Mysql心跳检测失败: ${err.message}`);
     }
 }
 
