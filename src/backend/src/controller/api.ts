@@ -16,4 +16,8 @@ export default async function api(fastify: FastifyInstance) {
     fastify.get('/mysql', async (req, _) => {
         return query(fastify, "SELECT 1 + ? AS `dual`", req.query['id'])
     });
+    fastify.get('/nano', async (req, _) => {
+        fastify.mqtt.publish("topic/test/A", req.query['value'])
+        return {message: 'ok'}
+    });
 }
