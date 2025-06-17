@@ -30,7 +30,7 @@ vibe-link/
 │   │   │   │   ├── view.ts # 视图（编译后才能访问,挂载vue静态目录）
 │   │   │   └── plugin/     # 插件配置
 │   │   │   │   ├── mysql.ts   # mysql封装
-│   │   │   │   ├── nanomq.ts  # nanomq封装
+│   │   │   │   ├── nano.ts  # nanomq封装
 │   │   │   │   ├── redis.ts   # redis封装
 │   │   │   ├── fastify.config.ts # Fastify 配置
 │   │   └── package.json  # backend层配置  

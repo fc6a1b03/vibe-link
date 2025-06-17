@@ -1,6 +1,6 @@
-import * as path from "node:path";
-import {FastifyInstance} from "fastify";
-import fastifyStatic from "@fastify/static";
+import * as path from "node:path"
+import {FastifyInstance} from "fastify"
+import fastifyStatic from "@fastify/static"
 
 /**
  * 视图控制器

@@ -33,9 +33,9 @@ export async function mysqlReady(fastify: FastifyInstance) {
     if (!fastify.mysql) throw new Error("Mysql装饰器未注入");
     try {
         await fastify.mysql.query('SELECT 1');
-        fastify.log.info("🌿 Mysql连接正常");
+        fastify.log.info("✅  Mysql连接正常");
     } catch (err) {
-        fastify.log.error(`🔴 Mysql心跳检测失败: ${err.message}`);
+        fastify.log.error(`❌  Mysql心跳检测失败: ${err.message}`);
     }
 }
 
