@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "bun fastify.config.ts",
-    "build": "bun build fastify.config.ts --outfile=dist/app.js"
+    "build": "bun build fastify.config.ts --outfile=dist/app.js --target=bun"
   },
   "dependencies": {
     "mqtt": "^5.13.1",
