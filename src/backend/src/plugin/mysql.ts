@@ -9,7 +9,11 @@ export default async function mysqlRegister(fastify: FastifyInstance) {
     await fastify.register(require('@fastify/mysql'), {
         type: "pool",
         promise: true,
-        connectionString: process.env.MYSQL_CONFIG,
+        host: process.env.MYSQL_HOST,
+        port: process.env.MYSQL_PORT,
+        user: process.env.MYSQL_USER,
+        database: process.env.MYSQL_DATABASE,
+        password: Buffer.from(process.env.MYSQL_PASS),
         pool: {
             min: 2,
             max: 10,

@@ -17,7 +17,7 @@ export default async function redisRegister(fastify: FastifyInstance) {
         enableOfflineQueue: true,
         host: process.env.REDIS_HOST,
         port: process.env.REDIS_PORT,
-        password: process.env.REDIS_PASS,
+        password: Buffer.from(process.env.REDIS_PASS),
     });
     await redisReady(fastify);
 }
