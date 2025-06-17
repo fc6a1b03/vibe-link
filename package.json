@@ -13,6 +13,9 @@
     "dev:backend": "cd src/backend && bun run dev",
     "dev:frontend": "cd src/frontend && bun run dev",
     "dev": "concurrently 'bun run dev:backend' 'bun run dev:frontend'",
+    "clear:backend": "cd src/backend && bun run clear",
+    "clear:frontend": "cd src/frontend && bun run clear",
+    "clear": "concurrently 'bun run clear:backend' 'bun run clear:frontend'",
     "build:backend": "cd src/backend && bun run build",
     "build:frontend": "cd src/frontend && bun run build",
     "build": "concurrently 'bun run build:backend' 'bun run build:frontend'"
