@@ -3,6 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
+    "clear": "rm -rf dist",
     "build": "vite build --outDir dist"
   },
   "dependencies": {
