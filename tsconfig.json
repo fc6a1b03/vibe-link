@@ -12,6 +12,8 @@
         "src/common/*"
       ]
     },
+    "removeComments": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
   }
 }
