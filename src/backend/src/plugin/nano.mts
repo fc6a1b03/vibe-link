@@ -27,6 +27,6 @@ export default async function nanoRegister(fastify: FastifyInstance) {
     // 服务关闭时断开MQTT连接
     fastify.addHook("onClose", async () => client.end());
     // 连接事件处理
-    client.on("connect", () => fastify.log.info("✅  MQTT连接成功"));
-    client.on("error", (err) => fastify.log.error(`❌  MQTT连接错误: ${err.message}`));
+    client.on("connect", () => fastify.log.info("✅  MQTT 连接正常"));
+    client.on("error", (err) => fastify.log.error(`❌  MQTT 连接错误: ${err.message}`));
 }
