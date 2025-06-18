@@ -19,16 +19,12 @@ export default async function swaggerRegister(fastify: FastifyInstance) {
         }
     });
     await fastify.register(require('@fastify/swagger-ui'), {
-        routePrefix: process.env.SWAGGER_PREFIX,
-        uiConfig: {docExpansion: 'full'}
+        routePrefix: process.env.SWAGGER_PREFIX
     });
     // 自动扫描路由
     await fastify.register(require('@fastify/autoload'), {
-        forceESM: true,
-        encapsulate: true,
-        dirNameRoutePrefix: true,
-        // TODO：待支持mts
-        scriptPattern: /\.(js)$/,
+        routeParams: true,
+        scriptPattern: /\.(api.ts)$/,
         dir: path.join(__dirname, "..", "routes")
     });
     fastify.ready(() => {
