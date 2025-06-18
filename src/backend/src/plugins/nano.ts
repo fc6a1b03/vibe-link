@@ -1,5 +1,5 @@
-import mqtt from "mqtt"
-import {FastifyInstance} from "fastify"
+import mqtt from 'mqtt'
+import {FastifyInstance} from 'fastify'
 
 /**
  * 注册NanoMq
@@ -23,10 +23,10 @@ export default async function nanoRegister(fastify: FastifyInstance) {
         }
     });
     // 注入到Fastify实例
-    fastify.decorate("mqtt", client);
+    fastify.decorate('mqtt', client);
     // 服务关闭时断开MQTT连接
-    fastify.addHook("onClose", async () => client.end());
+    fastify.addHook('onClose', async () => client.end());
     // 连接事件处理
-    client.on("connect", () => fastify.log.info("✅  MQTT 连接正常"));
-    client.on("error", (err) => fastify.log.error(`❌  MQTT 连接错误: ${err.message}`));
+    client.on('connect', () => fastify.log.info('✅  MQTT 连接正常'));
+    client.on('error', (err) => fastify.log.error(`❌  MQTT 连接错误: ${err.message}`));
 }

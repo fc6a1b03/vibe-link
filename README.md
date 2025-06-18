@@ -26,13 +26,13 @@ vibe-link/
 │   ├── backend/            # Fastify 服务
 │   │   ├── src/
 │   │   │   ├── controller/ # 控制器
-│   │   │   │   ├── api.mts  # 接口
-│   │   │   │   ├── view.mts # 视图（编译后才能访问,挂载vue静态目录）
+│   │   │   │   ├── api.ts  # 接口
+│   │   │   │   ├── view.ts # 视图（编译后才能访问,挂载vue静态目录）
 │   │   │   └── plugin/     # 插件配置
-│   │   │   │   ├── mysql.mts   # mysql封装
-│   │   │   │   ├── nano.mts  # nanomq封装
-│   │   │   │   ├── redis.mts   # redis封装
-│   │   │   ├── fastify.config.mts # Fastify 配置
+│   │   │   │   ├── mysql.ts   # mysql封装
+│   │   │   │   ├── nano.ts  # nanomq封装
+│   │   │   │   ├── redis.ts   # redis封装
+│   │   │   ├── fastify.config.ts # Fastify 配置
 │   │   └── package.json  # backend层配置  
 │   └── common/           # 共享代码
 │       ├── src/          # 工具函数/类型定义
