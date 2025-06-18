@@ -1,5 +1,5 @@
-import {FastifyInstance} from "fastify"
-import {MySQLRowDataPacket} from "@fastify/mysql"
+import {FastifyInstance} from 'fastify'
+import {MySQLRowDataPacket} from '@fastify/mysql'
 
 /**
  * 注册Mysql
@@ -7,7 +7,7 @@ import {MySQLRowDataPacket} from "@fastify/mysql"
  */
 export default async function mysqlRegister(fastify: FastifyInstance) {
     await fastify.register(require('@fastify/mysql'), {
-        type: "pool",
+        type: 'pool',
         promise: true,
         host: process.env.MYSQL_HOST,
         port: process.env.MYSQL_PORT,
@@ -34,10 +34,10 @@ export default async function mysqlRegister(fastify: FastifyInstance) {
  * @param fastify
  */
 export async function mysqlReady(fastify: FastifyInstance) {
-    if (!fastify.mysql) throw new Error("Mysql装饰器未注入");
+    if (!fastify.mysql) throw new Error('Mysql装饰器未注入');
     try {
         await fastify.mysql.query('SELECT 1');
-        fastify.log.info("✅  Mysql 连接正常");
+        fastify.log.info('✅  Mysql 连接正常');
     } catch (err) {
         fastify.log.error(`❌  Mysql 心跳检测失败: ${err.message}`);
     }

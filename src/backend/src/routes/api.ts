@@ -6,7 +6,7 @@ import {query} from "@backend/plugins/mysql"
  * @param fastify
  */
 export default async function api(fastify: FastifyInstance) {
-    fastify.get('/', async () => {
+    fastify.get('/health', async () => {
         return {message: 'Normal Service'};
     });
     fastify.get('/redis', async (req, _) => {

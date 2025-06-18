@@ -7,7 +7,6 @@
     "build": "bun build fastify.config.ts --outfile=dist/app.js --target=bun"
   },
   "dependencies": {
-    "@fastify/autoload": "^6.3.1",
     "@fastify/mysql": "^5.0.2",
     "@fastify/redis": "^7.0.2",
     "@fastify/swagger": "^9.5.1",
@@ -17,9 +16,5 @@
     "ioredis": "^5.6.1",
     "mqtt": "^5.13.1",
     "mysql2": "^3.14.1"
-  },
-  "devDependencies": {
-    "@types/bun": "^1.2.16",
-    "typescript": "^5.8.3"
   }
 }
