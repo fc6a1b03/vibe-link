@@ -6,10 +6,10 @@ import * as path from "node:path"
 import api from "@backend/routes/api"
 import view from "@backend/routes/view"
 import {MySQLPromisePool} from "@fastify/mysql"
-import nanoRegister from "@backend/plugin/nano"
-import redisRegister from "@backend/plugin/redis"
-import mysqlRegister from "@backend/plugin/mysql"
-import swaggerRegister from "@backend/plugin/swagger"
+import nanoRegister from "@backend/plugins/nano"
+import redisRegister from "@backend/plugins/redis"
+import mysqlRegister from "@backend/plugins/mysql"
+import swaggerRegister from "@backend/plugins/swagger"
 
 // 初始化环境配置
 dotenv.config({path: path.resolve(__dirname, "..", "..", ".env")});

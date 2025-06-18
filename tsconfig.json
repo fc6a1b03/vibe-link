@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
+    "outDir": "dist",
     "paths": {
       "@backend/*": [
         "src/backend/src/*"
@@ -12,6 +13,9 @@
         "src/common/*"
       ]
     },
+    "include": [
+      "src/backend/*"
+    ],
     "removeComments": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true

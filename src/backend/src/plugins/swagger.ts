@@ -25,6 +25,8 @@ export default async function swaggerRegister(fastify: FastifyInstance) {
     // 自动扫描路由
     await fastify.register(require('@fastify/autoload'), {
         forceESM: true,
+        encapsulate: true,
+        dirNameRoutePrefix: true,
         // TODO：待支持mts
         scriptPattern: /\.(js)$/,
         dir: path.join(__dirname, "..", "routes")

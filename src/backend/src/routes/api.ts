@@ -1,5 +1,5 @@
 import {FastifyInstance} from "fastify"
-import {query} from "@backend/plugin/mysql"
+import {query} from "@backend/plugins/mysql"
 
 /**
  * 服务控制器

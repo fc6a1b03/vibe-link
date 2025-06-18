@@ -3,8 +3,8 @@
   "type": "module",
   "scripts": {
     "clear": "rm -rf dist",
-    "dev": "bun fastify.config.mts",
-    "build": "bun build fastify.config.mts --outfile=dist/app.js --target=bun"
+    "dev": "bun fastify.config.ts",
+    "build": "bun build fastify.config.ts --outfile=dist/app.js --target=bun"
   },
   "dependencies": {
     "@fastify/autoload": "^6.3.1",
@@ -17,5 +17,9 @@
     "ioredis": "^5.6.1",
     "mqtt": "^5.13.1",
     "mysql2": "^3.14.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.16",
+    "typescript": "^5.8.3"
   }
 }
