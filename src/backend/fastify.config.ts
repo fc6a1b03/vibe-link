@@ -2,9 +2,11 @@ import dotenv from 'dotenv'
 import Redis from 'ioredis'
 import Fastify from 'fastify'
 import {MqttClient} from 'mqtt'
+import {JWT} from '@fastify/jwt'
 import * as path from 'node:path'
 import api from '@backend/routes/api'
 import view from '@backend/routes/view'
+import jwtRegister from '@backend/plugins/jwt'
 import {MySQLPromisePool} from '@fastify/mysql'
 import nanoRegister from '@backend/plugins/nano'
 import redisRegister from '@backend/plugins/redis'
@@ -16,6 +18,7 @@ dotenv.config({path: path.resolve(__dirname, '..', '..', '.env')});
 // 注册插件模组
 declare module 'fastify' {
     interface FastifyInstance {
+        jwt: JWT,
         redis: Redis,
         mqtt: MqttClient,
         mysql: MySQLPromisePool,
@@ -32,6 +35,7 @@ async function main() {
         logger: process.env.BACKEND_LOGGER === 'true'
     });
     // 注册插件
+    await jwtRegister(fastify);
     await nanoRegister(fastify);
     await redisRegister(fastify);
     await mysqlRegister(fastify);
